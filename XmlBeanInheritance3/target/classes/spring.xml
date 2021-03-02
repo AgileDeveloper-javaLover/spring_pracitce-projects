@@ -1,0 +1,42 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/util
+    http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<bean name="rectangle" class="com.XmlBeanInheritance3.Rectangle" parent="graph">
+		<property name="points">
+			<list merge="true">
+				<value>point 3</value>
+				<value>point 4</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="triangle" class="com.XmlBeanInheritance3.Triangle" parent="graph">
+		<property name="points">
+			<list  merge="true">
+				<value>point 3</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="graph" class="com.XmlBeanInheritance3.ClosedGraph">
+		<property name="points">
+			<list>
+				<value>point 1</value>
+				<value>point 2</value>
+			</list>
+
+		</property>
+	</bean>
+</beans>
